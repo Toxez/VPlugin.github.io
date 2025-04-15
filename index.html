@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-ru="VPlugins - Главная страница" data-en="VPlugins - Home Page">VPlugins - Главная страница</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>VPlugins</h2>
+        </div>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> <span data-ru="Главная" data-en="Home">Главная</span></a>
+            <a href="plugins.html"><i class="fas fa-cogs"></i> <span data-ru="Плагины" data-en="Plugins">Плагины</span></a>
+            <a href="links.html"><i class="fas fa-link"></i> <span data-ru="Ссылки" data-en="Links">Ссылки</span></a>
+            <a href="rules.html"><i class="fas fa-book"></i> <span data-ru="Правила" data-en="Rules">Правила</span></a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <header>
+            <h1><i class="fas fa-home"></i> <span data-ru="Главная страница" data-en="Home Page">Главная страница</span> <i class="fas fa-cog settings-icon" onclick="openSettings()"></i></h1>
+        </header>
+
+        <div class="main-content">
+            <h2 data-ru="О сайте" data-en="About the Site">О сайте</h2>
+            <p data-ru="Привет! Тут ты можешь скачать плагины для своего сервера. Я сделали пока что только 2 плагина, но в скоре их будет больше!" data-en="Hello! Here you can download plugins for your server. I've made only 2 plugins so far, but more will come soon!">Привет! Тут ты можешь скачать плагины для своего сервера. Я сделали пока что только 2 плагина, но в скоре их будет больше!</p>
+            <p data-ru="Что бы скачать плагина выбери раздел 'Плагины' в левой панельке" data-en="To download a plugin, select the 'Plugins' section in the left panel">Что бы скачать плагина выбери раздел "Плагины" в левой панельке</p>
+        </div>
+
+        <div class="modal settings-modal" id="settingsModal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeSettings()">×</span>
+                <h2 data-ru="Настройки" data-en="Settings">Настройки</h2>
+                <div class="settings-container">
+                    <div class="setting-item">
+                        <label for="theme-toggle" data-ru="Тема сайта:" data-en="Site Theme:">Тема сайта:</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="slider"></span>
+                        </div>
+                        <span id="theme-label" data-ru-dark="Тёмная" data-en-dark="Dark" data-ru-light="Светлая" data-en-light="Light">Тёмная</span>
+                    </div>
+                    <div class="setting-item">
+                        <label for="language-select" data-ru="Язык:" data-en="Language:">Язык:</label>
+                        <select id="language-select">
+                            <option value="ru" data-ru="Русский" data-en="Russian">Русский</option>
+                            <option value="en" data-ru="Английский" data-en="English">English</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p data-ru="© 2025 VPlugins | Главная" data-en="© 2025 VPlugins | Home">© 2025 VPlugins | Главная</p>
+        </footer>
+    </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/scripts.js"></script>
+    <script>
+        function openSettings() {
+            document.getElementById('settingsModal').style.display = 'flex';
+        }
+
+        function closeSettings() {
+            document.getElementById('settingsModal').style.display = 'none';
+        }
+
+        document.getElementById('settingsModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeSettings();
+            }
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeLabel = document.getElementById('theme-label');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-theme');
+            themeToggle.checked = true;
+            updateThemeLabel();
+        }
+
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                body.classList.add('light-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.remove('light-theme');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateThemeLabel();
+        });
+
+        const languageSelect = document.getElementById('language-select');
+        const lang = localStorage.getItem('language') || 'ru';
+        languageSelect.value = lang;
+        updateLanguage(lang);
+
+        languageSelect.addEventListener('change', () => {
+            const selectedLang = languageSelect.value;
+            localStorage.setItem('language', selectedLang);
+            updateLanguage(selectedLang);
+        });
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-ru]').forEach(elem => {
+                elem.textContent = elem.getAttribute(`data-${lang}`);
+            });
+            document.title = document.querySelector('title').getAttribute(`data-${lang}`);
+            updateThemeLabel();
+        }
+
+        function updateThemeLabel() {
+            const lang = localStorage.getItem('language') || 'ru';
+            const theme = themeToggle.checked ? 'light' : 'dark';
+            themeLabel.textContent = themeLabel.getAttribute(`data-${lang}-${theme}`);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            const button = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        };
+
+        // Динамическое выделение активной страницы
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.sidebar nav a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

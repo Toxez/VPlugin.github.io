@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPlugins - Настройки</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>VPlugins</h2>
+        </div>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Главная</a>
+            <a href="plugins.html"><i class="fas fa-cogs"></i> Плагины</a>
+            <a href="links.html"><i class="fas fa-link"></i> Ссылки</a>
+            <a href="settings.html" class="active"><i class="fas fa-sliders-h"></i> Настройки</a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <header>
+            <h1><i class="fas fa-sliders-h"></i> Настройки сайта</h1>
+        </header>
+
+        <div class="main-content">
+            <h2>Персонализация</h2>
+            <div class="settings-container">
+                <div class="setting-item">
+                    <label for="theme-toggle">Тема сайта:</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                    </div>
+                    <span id="theme-label">Тёмная</span>
+                </div>
+                <div class="setting-item">
+                    <label for="language-select">Язык:</label>
+                    <select id="language-select">
+                        <option value="ru">Русский</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 VPlugins | Настройки</p>
+        </footer>
+    </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeLabel = document.getElementById('theme-label');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-theme');
+            themeToggle.checked = true;
+            themeLabel.textContent = 'Светлая';
+        }
+
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                body.classList.add('light-theme');
+                themeLabel.textContent = 'Светлая';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.remove('light-theme');
+                themeLabel.textContent = 'Тёмная';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            const button = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>

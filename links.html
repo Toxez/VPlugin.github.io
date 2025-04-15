@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-ru="VPlugins - Ссылки" data-en="VPlugins - Links">VPlugins - Ссылки</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>VPlugins</h2>
+        </div>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> <span data-ru="Главная" data-en="Home">Главная</span></a>
+            <a href="plugins.html"><i class="fas fa-cogs"></i> <span data-ru="Плагины" data-en="Plugins">Плагины</span></a>
+            <a href="links.html" class="active"><i class="fas fa-link"></i> <span data-ru="Ссылки" data-en="Links">Ссылки</span></a>
+            <a href="rules.html"><i class="fas fa-book"></i> <span data-ru="Правила" data-en="Rules">Правила</span></a>
+        </nav>
+    </div>
+
+    <div class="content">
+        <header>
+            <h1><i class="fas fa-link"></i> <span data-ru="Полезные ссылки на сайты" data-en="Useful Links to Websites">Полезные ссылки на сайты</span> <i class="fas fa-cog settings-icon" onclick="openSettings()"></i></h1>
+        </header>
+
+        <div class="main-content">
+            <h2 data-ru="Где искать плагины, моды и инструменты" data-en="Where to Find Plugins, Mods, and Tools">Где искать плагины, моды и инструменты</h2>
+            <div class="links-grid">
+                <div class="link-item spigotmc">
+                    <div class="link-icon"><i class="fas fa-server"></i></div>
+                    <h3>SpigotMC</h3>
+                    <p data-ru="Огромный каталог плагинов для серверов. Здесь ты найдешь всё, от простых утилит до сложных систем для управления сервером. Сообщество активно, и многие плагины обновляются регулярно." data-en="A huge catalog of plugins for servers. Here you can find everything from simple utilities to complex server management systems. The community is active, and many plugins are regularly updated.">Огромный каталог плагинов для серверов. Здесь ты найдешь всё, от простых утилит до сложных систем для управления сервером. Сообщество активно, и многие плагины обновляются регулярно.</p>
+                    <a href="https://www.spigotmc.org" target="_blank" data-ru="Перейти" data-en="Visit">Перейти</a>
+                </div>
+                <div class="link-item spigotmc-ru">
+                    <div class="link-icon"><i class="fas fa-globe"></i></div>
+                    <h3>SpigotMC (RU)</h3>
+                    <p data-ru="Русскоязычная версия SpigotMC с плагинами. Удобно, если ищешь что-то на русском. Здесь можно найти переводы популярных плагинов и пообщаться с русскоязычным сообществом разработчиков." data-en="Russian version of SpigotMC with plugins. Convenient if you're looking for something in Russian. Here you can find translations of popular plugins and communicate with the Russian-speaking developer community.">Русскоязычная версия SpigotMC с плагинами. Удобно, если ищешь что-то на русском. Здесь можно найти переводы популярных плагинов и пообщаться с русскоязычным сообществом разработчиков.</p>
+                    <a href="https://spigotmc.ru" target="_blank" data-ru="Перейти" data-en="Visit">Перейти</a>
+                </div>
+                <div class="link-item modrinth">
+                    <div class="link-icon"><i class="fas fa-cubes"></i></div>
+                    <h3>Modrinth</h3>
+                    <p data-ru="Платформа для модов и плагинов. Поддерживает множество версий Minecraft и предлагает удобный интерфейс для поиска. Также есть система рейтингов и отзывов от пользователей." data-en="A platform for mods and plugins. Supports multiple Minecraft versions and offers a convenient search interface. Also includes a rating and review system from users.">Платформа для модов и плагинов. Поддерживает множество версий Minecraft и предлагает удобный интерфейс для поиска. Также есть система рейтингов и отзывов от пользователей.</p>
+                    <a href="https://modrinth.com" target="_blank" data-ru="Перейти" data-en="Visit">Перейти</a>
+                </div>
+                <div class="link-item fabric">
+                    <div class="link-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Fabric</h3>
+                    <p data-ru="Лучшая платформа для загрузки модов. Fabric позволяет легко устанавливать моды и обеспечивает высокую производительность. Отлично подходит для тех, кто хочет кастомизировать игру." data-en="The best platform for downloading mods. Fabric makes it easy to install mods and ensures high performance. Great for those who want to customize their game.">Лучшая платформа для загрузки модов. Fabric позволяет легко устанавливать моды и обеспечивает высокую производительность. Отлично подходит для тех, кто хочет кастомизировать игру.</p>
+                    <a href="https://fabricmc.net" target="_blank" data-ru="Перейти" data-en="Visit">Перейти</a>
+                </div>
+                <div class="link-item forge">
+                    <div class="link-icon"><i class="fas fa-hammer"></i></div>
+                    <h3>Forge</h3>
+                    <p data-ru="Популярная платформа для модов Minecraft. Поддерживает огромное количество модов и версий игры. Отличный выбор для тех, кто хочет расширить свой игровой опыт." data-en="A popular platform for Minecraft mods. Supports a huge number of mods and game versions. A great choice for those who want to expand their gaming experience.">Популярная платформа для модов Minecraft. Поддерживает огромное количество модов и версий игры. Отличный выбор для тех, кто хочет расширить свой игровой опыт.</p>
+                    <a href="https://minecraftforge.net" target="_blank" data-ru="Перейти" data-en="Visit">Перейти</a>
+                </div>
+                <div class="link-item curseforge">
+                    <div class="link-icon"><i class="fas fa-download"></i></div>
+                    <h3>CurseForge</h3>
+                    <p data-ru="Платформа для модов, текстур и карт. Имеет удобное приложение для управления модами. Огромное сообщество и множество ресурсов для всех версий Minecraft." data-en="A platform for mods, textures, and maps. Features a convenient app for managing mods. A large community and plenty of resources for all Minecraft versions.">Платформа для модов, текстур и карт. Имеет удобное приложение для управления модами. Огромное сообщество и множество ресурсов для всех версий Minecraft.</p>
+                    <a href="https://www.curseforge.com/minecraft" target="_blank" data-ru="Перейти" data-en="Visit">Перейти</a>
+                </div>
+                <div class="link-item planetminecraft">
+                    <div class="link-icon"><i class="fas fa-globe-americas"></i></div>
+                    <h3>PlanetMinecraft</h3>
+                    <p data-ru="Сообщество для скачивания модов, карт, текстур и скинов. Также есть форум, где можно обсудить проекты и найти идеи для своего сервера." data-en="A community for downloading mods, maps, textures, and skins. Also has a forum where you can discuss projects and find ideas for your server.">Сообщество для скачивания модов, карт, текстур и скинов. Также есть форум, где можно обсудить проекты и найти идеи для своего сервера.</p>
+                    <a href="https://www.planetminecraft.com" target="_blank" data-ru="Перейти" data-en="Visit">Перейти</a>
+                </div>
+                <div class="link-item mcreator">
+                    <div class="link-icon"><i class="fas fa-code"></i></div>
+                    <h3>MCreator</h3>
+                    <p data-ru="Инструмент для создания модов без программирования. Подходит для новичков, которые хотят попробовать себя в моддинге. Поддерживает как Forge, так и Fabric." data-en="A tool for creating mods without programming. Suitable for beginners who want to try modding. Supports both Forge and Fabric.">Инструмент для создания модов без программирования. Подходит для новичков, которые хотят попробовать себя в моддинге. Поддерживает как Forge, так и Fabric.</p>
+                    <a href="https://mcreator.net" target="_blank" data-ru="Перейти" data-en="Visit">Перейти</a>
+                </div>
+                <div class="link-item bukkit">
+                    <div class="link-icon"><i class="fas fa-plug"></i></div>
+                    <h3>Bukkit</h3>
+                    <p data-ru="Классическая платформа для плагинов Minecraft. Хотя сейчас используется реже, всё ещё содержит множество полезных ресурсов для старых версий игры." data-en="A classic platform for Minecraft plugins. Although less used now, it still contains many useful resources for older game versions.">Классическая платформа для плагинов Minecraft. Хотя сейчас используется реже, всё ещё содержит множество полезных ресурсов для старых версий игры.</p>
+                    <a href="https://dev.bukkit.org" target="_blank" data-ru="Перейти" data-en="Visit">Перейти</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal settings-modal" id="settingsModal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeSettings()">×</span>
+                <h2 data-ru="Настройки" data-en="Settings">Настройки</h2>
+                <div class="settings-container">
+                    <div class="setting-item">
+                        <label for="theme-toggle" data-ru="Тема сайта:" data-en="Site Theme:">Тема сайта:</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="theme-toggle">
+                            <span class="slider"></span>
+                        </div>
+                        <span id="theme-label" data-ru-dark="Тёмная" data-en-dark="Dark" data-ru-light="Светлая" data-en-light="Light">Тёмная</span>
+                    </div>
+                    <div class="setting-item">
+                        <label for="language-select" data-ru="Язык:" data-en="Language:">Язык:</label>
+                        <select id="language-select">
+                            <option value="ru" data-ru="Русский" data-en="Russian">Русский</option>
+                            <option value="en" data-ru="Английский" data-en="English">English</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p data-ru="© 2025 VPlugins | Ссылки" data-en="© 2025 VPlugins | Links">© 2025 VPlugins | Ссылки</p>
+        </footer>
+    </div>
+
+    <button class="scroll-to-top" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="js/scripts.js"></script>
+    <script>
+        function openSettings() {
+            document.getElementById('settingsModal').style.display = 'flex';
+        }
+
+        function closeSettings() {
+            document.getElementById('settingsModal').style.display = 'none';
+        }
+
+        document.getElementById('settingsModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeSettings();
+            }
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeLabel = document.getElementById('theme-label');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-theme');
+            themeToggle.checked = true;
+            updateThemeLabel();
+        }
+
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                body.classList.add('light-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.remove('light-theme');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateThemeLabel();
+        });
+
+        const languageSelect = document.getElementById('language-select');
+        const lang = localStorage.getItem('language') || 'ru';
+        languageSelect.value = lang;
+        updateLanguage(lang);
+
+        languageSelect.addEventListener('change', () => {
+            const selectedLang = languageSelect.value;
+            localStorage.setItem('language', selectedLang);
+            updateLanguage(selectedLang);
+        });
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-ru]').forEach(elem => {
+                elem.textContent = elem.getAttribute(`data-${lang}`);
+            });
+            document.title = document.querySelector('title').getAttribute(`data-${lang}`);
+            updateThemeLabel();
+        }
+
+        function updateThemeLabel() {
+            const lang = localStorage.getItem('language') || 'ru';
+            const theme = themeToggle.checked ? 'light' : 'dark';
+            themeLabel.textContent = themeLabel.getAttribute(`data-${lang}-${theme}`);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            const button = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
